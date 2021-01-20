@@ -26,6 +26,7 @@ render(){
       <div className="grid-container heading container">
         <span className="grid-item name-heading"> Name</span>
         <span className="grid-item phone-heading">Phone</span>
+       
       </div>
       
       {
@@ -33,6 +34,9 @@ render(){
           return <div className="grid-container" key={sub.id} >
           <span className="grid-item "> {sub.name}</span>
           <span className="grid-item ">{sub.phone}</span>
+          <span className="grid-item action-btn-contaner">
+          <button className="custom-btn delete-btn">Delete</button>
+          </span>
         </div>
         })
       }

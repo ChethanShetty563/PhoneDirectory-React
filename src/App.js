@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import Header from './Header';
 import './App.css';
 
+
+
 class App extends Component {
 
-  
+  clickHandler(message) {
+    alert(message);
+  }
 render(){
   let subscribers = [
     {
@@ -35,7 +39,7 @@ render(){
           <span className="grid-item "> {sub.name}</span>
           <span className="grid-item ">{sub.phone}</span>
           <span className="grid-item action-btn-contaner">
-          <button className="custom-btn delete-btn">Delete</button>
+          <button className="custom-btn delete-btn" onClick={this.clickHandler.bind(this,"Deleted clicked")}>Delete</button>
           </span>
         </div>
         })

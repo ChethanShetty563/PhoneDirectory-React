@@ -6,22 +6,29 @@ import './App.css';
 
 class App extends Component {
 
+  constructor() {
+    super();
+    this.state = {
+      subscribersListtoShow : []
+    }
+  }
+
   clickHandler(message) {
     alert(message);
   }
 render(){
-  let subscribers = [
-    {
-      id:1,
-      name: "Shilpa",
-      phone: "544444"
-    },
-    {
-      id:2,
-      name: "chethan",
-      phone: "11212"
-    },
-  ]
+  // let subscribers = [
+  //   {
+  //     id:1,
+  //     name: "Shilpa",
+  //     phone: "544444"
+  //   },
+  //   {
+  //     id:2,
+  //     name: "chethan",
+  //     phone: "11212"
+  //   },
+  // ]
   return (
     <div>
       <Header heading="Phone Directory"/>
@@ -34,7 +41,7 @@ render(){
       </div>
       
       {
-        subscribers.map(sub => {
+        this.state.subscribersListtoShow.map(sub => {
           return <div className="grid-container" key={sub.id} >
           <span className="grid-item "> {sub.name}</span>
           <span className="grid-item ">{sub.phone}</span>

@@ -9,8 +9,9 @@ class ShowSubscriber extends Component {
 
 
 
-  clickHandler(message) {
-    alert(message);
+  onDeletedClick = (subscriberID) => {
+    
+    this.props.deleteSubscriberHandler(subscriberID);
   }
 render(){
   console.log("render method called")
@@ -43,7 +44,7 @@ render(){
           <span className="grid-item "> {sub.name}</span>
           <span className="grid-item ">{sub.phone}</span>
           <span className="grid-item action-btn-contaner">
-          <button className="custom-btn delete-btn" onClick={this.clickHandler.bind(this,"Deleted clicked")}>Delete</button>
+          <button className="custom-btn delete-btn" onClick={this.onDeletedClick.bind(this,sub.id)}>Delete</button>
           </span>
         </div>
         })
